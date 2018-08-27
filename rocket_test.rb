@@ -15,7 +15,7 @@ class RocketTest < Minitest::Test
     assert_equal(expected, actual)
   end
 
-  def test_color_updater
+  def test_color_update
     expected = 'blue'
     @rocket.color = 'blue'
     actual = @rocket.color
@@ -23,9 +23,8 @@ class RocketTest < Minitest::Test
   end
 
   def test_flying
-    expected = false
-    @rocket.flying = false
-    actual = @rocket.flying
+    expected = @rocket.flying?
+    actual = false
     assert_equal(expected, actual)
   end
 
@@ -41,6 +40,6 @@ class RocketTest < Minitest::Test
     expected = false
     @rocket.land
     actual = @rocket.flying?
-    assert_equal(expected, actual) 
+    assert_equal(expected, actual)
   end
 end
